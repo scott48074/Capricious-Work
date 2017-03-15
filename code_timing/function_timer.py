@@ -1,4 +1,14 @@
+#!/usr/bin/env python3
+"""
+I use this script to time functions to better understand efficiency
+USAGE:
+    @timer
+    def foo():
+        do stuff
+    foo()
+"""
 import time
+
 
 def timer(function):
     def wrapper(*args):
@@ -8,13 +18,9 @@ def timer(function):
         return stop - start
     return wrapper
 
-@timer
-def test():
-    for x in range(1000000):
-        i = 0
 
 def main():
-	print(test())
+    pass
 
 if __name__ == '__main__':
-	main()
+    main()
