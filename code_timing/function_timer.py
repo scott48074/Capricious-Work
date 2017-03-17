@@ -11,11 +11,14 @@ import time
 
 
 def timer(function):
+    message = '{}\n{}() Processed for {}\n{}'
+
     def wrapper(*args):
         start = time.time()
-        function(*args)
+        results = function(*args)
         stop = time.time()
-        return stop - start
+        print(message.format('=' * 82, function.__name__, stop - start, '=' * 82))
+        return results
     return wrapper
 
 
